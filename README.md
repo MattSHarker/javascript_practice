@@ -1,4 +1,4 @@
-# javascript_practive
+# JavaScript Practice
 A series of program to help teach myself javascript. 
 
 The programs are created by following along with the book Eloquent Javascript, 3rd Edition by Marijn Haverbeke.
