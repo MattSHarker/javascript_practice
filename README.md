@@ -38,10 +38,11 @@ The programs are created by following along with the book Eloquent Javascript, 3
         * Switch case
 
 3. functions
-    1. functions.js
+    1. declarations.js
         * Writing functoins
         * Declaration notation
         * Arrow functions
+    2. details.js
         * Scope
         * Functions as values *
         
