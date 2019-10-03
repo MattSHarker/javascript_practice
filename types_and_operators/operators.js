@@ -11,7 +11,7 @@ typeof 4.5
 true ? 10 : 20
 
 // if true then return 10, else return 20
-// refer to if-else statements for further help
+// refer to program_structure/controlFlow.js (if-else) for further help
 
 
 // BOOLEAN OPERATORS
