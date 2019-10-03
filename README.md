@@ -24,15 +24,26 @@ The programs are created by following along with the book Eloquent Javascript, 3
     1. expressionsAndStatements.js
         * Statements
         * Bindings
-        * let keyword
-        * var keyword
-        * const keyword
+        * "let" keyword
+        * "var" keyword *
+        * "const" keyword
     2. functions.js
         * Functions
     3. controlFlow.js
         * If-else
         * While and Do loops
         * For loops
-        * break keyword
-        * continue keyword
+        * "break" keyword
+        * "continue" keyword
         * Switch case
+
+3. functions
+    1. functions.js
+        * Writing functoins
+        * Declaration notation
+        * Arrow functions
+        * Scope
+        * Functions as values *
+        
+
+NOTE: Starred entries need to be updated to include a reference to a file which has yet to be created
