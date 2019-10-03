@@ -8,4 +8,4 @@ console.log("the value of x is: ", x);  // prints the contents inside () to the 
 let max = Math.max(3, 6);   // this returns the higher of the two values 
                             // and it gets stored in the variable "max"
 
-// for creating functions, refer to functions/functions.js
+// for writing functions, refer to functions/declarations.js
