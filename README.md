@@ -1,8 +1,9 @@
 # JavaScript Practice
 A series of program to help teach myself javascript. 
 
-The programs are created by following along with the book Eloquent Javascript, 3rd Edition by Marijn Haverbeke.
+The programs are created by following along with the book *Eloquent Javascript* by Marijn Haverbeke (3rd edition).
 
+Each program was written in Visual Studio Code on Windows 10, and was tested in Chrome and the [sandbox provided by Haverbeke](https://eloquentjavascript.net/code/).
 
 ---
 ## Directory/File/Content listing
@@ -45,6 +46,7 @@ The programs are created by following along with the book Eloquent Javascript, 3
     2. details.js
         * Scope
         * Functions as values *
+
         
 
 NOTE: Starred entries need to be updated to include a reference to a file which has yet to be created
