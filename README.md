@@ -46,7 +46,11 @@ Each program was written in Visual Studio Code on Windows 10, and was tested in 
     2. details.js
         * Scope
         * Functions as values *
+    3. exercises
+        * min.js
+        * isEven.js
+        * countBs.js
+        * countChar.js
 
-        
 
 NOTE: Starred entries need to be updated to include a reference to a file which has yet to be created
