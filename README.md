@@ -1,5 +1,5 @@
 # JavaScript Practice
-A series of program to help teach myself javascript. 
+A series of program to help teach myself javascript. The files as they are will not run, but exist to demonstrate facets of JavaScript in a clearer manner. 
 
 The programs are created by following along with the book *Eloquent Javascript* by Marijn Haverbeke (3rd edition).
 
@@ -51,6 +51,15 @@ Each program was written in Visual Studio Code on Windows 10, and was tested in 
         * isEven.js
         * countBs.js
         * countChar.js
+
+4. data_structures
+    1. arrays.js
+        * Creating arrays
+        * Accessing elements
+        * Iterating over arrays
+    2. object.js
+        * Properties
+        * Methods
 
 
 NOTE: Starred entries need to be updated to include a reference to a file which has yet to be created
