@@ -57,9 +57,21 @@ Each program was written in Visual Studio Code on Windows 10, and was tested in 
         * Creating arrays
         * Accessing elements
         * Iterating over arrays
-    2. object.js
-        * Properties
-        * Methods
+        * Push, pop, etc
+    2. string.js
+        * Creating strings
+        * Slices
+        * Indexing
+        * Whitespace
+        * Splitting and joining
+        * Changing case
+    3. object.js
+        * Creating an object
+        * Properties and methods
+        * Mutability
+    4. json.js
+        * What JSON is
+        * JSON functions
 
 
-NOTE: Starred entries need to be updated to include a reference to a file which has yet to be created
+*NOTE: Starred entries need to be updated to include a reference to a file that has yet to be created*
