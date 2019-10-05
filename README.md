@@ -72,6 +72,11 @@ Each program was written in Visual Studio Code on Windows 10, and was tested in 
     4. json.js
         * What JSON is
         * JSON functions
+    5. exercises
+        * sumOfRange.js
+        * reverseArray.js
+        * list.js
+        * deepEqual.js
 
 
 *NOTE: Starred entries need to be updated to include a reference to a file that has yet to be created*
