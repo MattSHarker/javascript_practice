@@ -19,12 +19,11 @@ const repeat = function(n, action)
                     // repeat() to work
 };
 
-// functions don't need to be predefined to be passed to repeat()
+// predefined functions can be passed to repeat() as well
 repeat(3, console.log);
 
+// you can pass a function on the spot as well
 let labels = [];
-repeat(5,
-    i => {
-        labels.push(`Unit ${i+1}`); // an anonymous function
-    }    
-);
+repeat(5, i => {labels.push(`Unit ${i+1}`); } );
+          // i => ... is known as an anonymous function,
+            // as it is not attached to anything
