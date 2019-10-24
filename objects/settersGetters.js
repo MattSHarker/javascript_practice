@@ -1,5 +1,5 @@
 // SETTERS AND GETTERS AND STATICS
-
+// note the "set", "get" and "static" keywords
 
 // temperature class
 class Temperature
