@@ -45,7 +45,7 @@ Each program was written in Visual Studio Code on Windows 10, and was tested in 
         * Arrow functions
     2. details.js
         * Scope
-        * Functions as values *
+        * Functions as values
     3. exercises
         * min.js
         * isEven.js
@@ -77,6 +77,42 @@ Each program was written in Visual Studio Code on Windows 10, and was tested in 
         * reverseArray.js
         * list.js
         * deepEqual.js
-
+        
+5. Higher Order Functions
+    1. higherOrderFunctions.js
+        * Creating a function with a function
+        * Changing a function with a function
+        * Functions that provide control flow
+    2. abstractions.js
+        * abstracting a simple loop
+        * abstracting a looping function
+   
+6. Objects
+    1. objects.js
+        * Methods
+        * "this" keyword
+        * Prototypes
+    2. classes.js
+        * Class notation
+        * Overriding derived properties
+    3. maps.js
+        * Maps
+        * Safer ways to create maps
+        * Map class
+    4. polymorphism.js
+        * Polymorphism
+    5. symbols.js
+        * Symbols
+    6. iteratorInterface.js
+        * Iterator interface
+        * Matrix class iterator
+    7. settersGetters.js
+        * Setters, setters, and statics
+    8. inheritance.js
+        * Inheritance
+        * Extends
+        * Super
+        * "instanceof" operator
+    
 
 *NOTE: Starred entries need to be updated to include a reference to a file that has yet to be created*
