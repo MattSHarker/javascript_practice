@@ -24,7 +24,7 @@ class Matrix
 }
 
 // symmetric matrix class (value at x,y is the same as y,x)
-class SYmmetricMatrix extends Matrix
+class SymmetricMatrix extends Matrix
 {
     constructor(size, element = (x, y) => undefined)
     {
@@ -45,7 +45,7 @@ class SYmmetricMatrix extends Matrix
     }
 }
 
-let matrix = new SYmmetricMatrix(5, (x, y) => `${x},${y}`);
+let matrix = new SymmetricMatrix(5, (x, y) => `${x},${y}`);
 console.log(matrix.get(2, 3));
 // -> 3,2
 
@@ -59,3 +59,20 @@ console.log(matrix.get(2, 3));
     // super() for the superclass's contructor
     // super.method() for methods
         //  method() would be the same as this.method()
+
+
+// INSTANCEOF
+
+// binary operator that determines if the lhs is derived from the rhs
+
+console.log( new SymmetricMatrix(2) instanceof SymmetricMatrix);
+// -> true
+
+console.log(new SymmetricMatrix(3) instanceof Matrix);
+// -> true
+
+console.log(new Matrix(2, 4) instanceof SymmetricMatrix);
+// -> false
+
+console.log([2] instanceof Array);
+// -> true
