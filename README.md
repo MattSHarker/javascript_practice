@@ -113,7 +113,7 @@ Each program was written in Visual Studio Code on Windows 10, and was tested in 
         * Extends
         * Super
         * "instanceof" operator
-    9 exercises
+    9. exercises
         * Vec.js
         * groups.js
     
