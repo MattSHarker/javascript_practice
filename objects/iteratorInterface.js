@@ -38,6 +38,12 @@ class Matrix
     get(x, y) { return this.content[y * width + x]; }
 
     set(x, y) { this.content[y * this.width + x] = value; }
+
+    // add this to make this class iterable
+    [Symbol.iterator]()
+    {
+        return new MatrixIterator(this);
+    };
 }
 
 // matrix iterator class
@@ -70,7 +76,8 @@ class MatrixIterator
     }
 }
 
-// setting up the matrix to be iterable
+// setting up the matrix to be iterable from outside of the class
+// if the original class already has [Symbol.iterator](){...} don't include this
 Matrix.prototype[Symbol.iterator] = function()
 {
     return new MatrixIterator(this);
