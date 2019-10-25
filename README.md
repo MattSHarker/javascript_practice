@@ -116,6 +116,8 @@ Each program was written in Visual Studio Code on Windows 10, and was tested in 
     9. exercises
         * Vec.js
         * groups.js
+        * iterableGroups.js
+        * hasOwnProperty.js
     
 
 *NOTE: Starred entries need to be updated to include a reference to a file that has yet to be created*
