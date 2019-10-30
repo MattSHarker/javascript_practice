@@ -26,7 +26,7 @@ Each program was written in Visual Studio Code on Windows 10, and was tested in 
         * Statements
         * Bindings
         * "let" keyword
-        * "var" keyword *
+        * "var" keyword
         * "const" keyword
     2. functions.js
         * Functions
@@ -118,6 +118,32 @@ Each program was written in Visual Studio Code on Windows 10, and was tested in 
         * groups.js
         * iterableGroups.js
         * hasOwnProperty.js
-    
+        
+7. Robot
+    1. freezing.js
+        * Freezing objects
+
+8. Bugs and Errors
+    1. strictMode.js
+        * Strict mode
+        * Strict mode Enabled vs Disables
+    2. types.js
+        * Types
+    3. testing.js
+        * Testing
+    4. errorPropagation.js
+        * Error propagation
+    5. exceptions.js
+        * Throwing and catching exceptions
+        * Dealing with exceptions
+        * Creating new errors
+        * Selective catching
+        * Assertions
+    5. exercises
+        * retry.js
+        * lockedBox.js
+        
+9. Regular Expressions
+
 
 *NOTE: Starred entries need to be updated to include a reference to a file that has yet to be created*
