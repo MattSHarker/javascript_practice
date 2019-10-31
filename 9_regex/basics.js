@@ -37,21 +37,27 @@ console.log(/[0-9]/.test("in this 1"));
 
 // LIST OF SPECIAL CHARACTERS AND SHORTCUTS
 
-/*  \d      any digit char
- *  \w      any alphanumeric char
- *  \s      and whiteshpace char
- *  \D      any NON-digit char
- *  \W      any NON-alphanumeric char
- *  \S      any NON-whitespace char
+/*  \d  any digit char
+ *  \w  any alphanumeric char
+ *  \s  and whiteshpace char
+ *  \D  any NON-digit char
+ *  \W  any NON-alphanumeric char
+ *  \S  any NON-whitespace char
+ *  \b  string boundry
+ * 
  *  x-y     matches any chars within x and y in terms of unicode values  
  *  .       any character expect for newline
  *  ?       makes part of a pattern optional
  *  ^       inverses a set of chars (put in front of patter)
  *  +       matches the set multiple times (at least once)
  *  *       matches the set multiple times (can also match 0 times)
+ *  
+ * 
  *  []      matches anything inside once
  *  {x}     matches x amount of times
- *  {x,y}   matches x to y amount of times (inclusive)
+ *  {x,y}   matches at least x and no more than y times (x <= _ <= y)
+ *  (x|y|z) matches to x OR Y OR z
+ * 
  */
 
 
@@ -95,3 +101,12 @@ console.log(neighbor.test("neighbor"));
 // {2,4} says the pattern should repeat 2, 3, or 4 times
 let dateTime = /\d{1,2}-\d{1,2}-\d{4} \d{1,2}:\d{2}/
 console.log(dateTime.test("1-30-2003 8:45"));
+
+
+// (x|y) matches to either x or y
+let animalCount = /\b\d+ (pig|cow|chickedn)s?\b/;   // see ./stringBoundries.js for \b
+console.log(animalCount.test("15 pigs"));
+// -> true
+
+console.log(animalCount.test("15 pigchickens"));
+// -> false
