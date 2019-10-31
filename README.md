@@ -26,7 +26,7 @@ Each program was written in Visual Studio Code on Windows 10, and was tested in 
         * Statements
         * Bindings
         * "let" keyword
-        * "var" keyword
+        * "var" keyword *
         * "const" keyword
     2. functions.js
         * Functions
@@ -149,6 +149,13 @@ Each program was written in Visual Studio Code on Windows 10, and was tested in 
         * Sets of characters
         * List of special characters and shortcuts
         * Repeating patterns
-
+    2. groups.js
+        * Grouping subexpressions
+        * Matches and groups
+    3. dateClass.js
+        * The date class
+        * getTime
+        * List of other methods
+        * Using regex to convert a string to a date
 
 *NOTE: Starred entries need to be updated to include a reference to a file that has yet to be created*
