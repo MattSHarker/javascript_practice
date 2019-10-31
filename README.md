@@ -26,7 +26,7 @@ Each program was written in Visual Studio Code on Windows 10, and was tested in 
         * Statements
         * Bindings
         * "let" keyword
-        * "var" keyword
+        * "var" keyword *
         * "const" keyword
     2. functions.js
         * Functions
