@@ -52,6 +52,7 @@ console.log(/[0-9]/.test("in this 1"));
  *  +       matches the set multiple times (at least once)
  *  *       matches the set multiple times (can also match 0 times)
  *  
+ *  /.../g  replaces all instances of matching expressions (g as in global)
  * 
  *  []      matches anything inside once
  *  {x}     matches x amount of times
