@@ -1,5 +1,5 @@
 # JavaScript Practice
-A series of program to help teach myself javascript. The files as they are will not run, but exist to demonstrate facets of JavaScript in a clearer manner. 
+A series of program to help teach myself javascript. The files will not run as they are, and are not intended to be ran as such, for they are formatted to demonstrate various aspects of JavaScript in a clearer manner.
 
 The programs are created by following along with the book *Eloquent Javascript* by Marijn Haverbeke (3rd edition).
 
@@ -144,6 +144,11 @@ Each program was written in Visual Studio Code on Windows 10, and was tested in 
         * lockedBox.js
         
 9. Regular Expressions
+    1. basics.js
+        * Creating a regular expression
+        * Sets of characters
+        * List of special characters and shortcuts
+        * Repeating patterns
 
 
 *NOTE: Starred entries need to be updated to include a reference to a file that has yet to be created*
