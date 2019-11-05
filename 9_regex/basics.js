@@ -37,31 +37,36 @@ console.log(/[0-9]/.test("in this 1"));
 
 // LIST OF SPECIAL CHARACTERS AND SHORTCUTS
 
-/*  /\d/    any digit char
- *  /\w/    any alphanumeric char
- *  /\s/    and whiteshpace char
- *  /\D/    any NON-digit char
- *  /\W/    any NON-alphanumeric char
- *  /\S/    any NON-whitespace char
- *  /\b/    string boundry
+/*  /\d/        any digit char
+ *  /\w/        any alphanumeric char
+ *  /\s/        and whiteshpace char
+ *  /\D/        any NON-digit char
+ *  /\W/        any NON-alphanumeric char
+ *  /\S/        any NON-whitespace char
+ *  /\b/        string boundry
  * 
- *  x-y     matches any chars within x and y in terms of unicode values  
- *  .       any character expect for newline
- *  ?       makes part of a pattern optional
- *  [^]     inverts a set of chars (put in front of pattern)
- *  +       matches the set multiple times (at least once)
- *  *       matches the set multiple times (can also match 0 times)
+ *  /./         any character expect for newline
+ *  /x+/        matches one  or more times
+ *  /x+?/       matches one  or more times, non-greedy
+ *  /x* /       matches zero or more times
+ *  /x?/        matches zero or one  times
+ *  /^/         start of input
+ *  /$/         end of input
+ *  /x-y/       matches any chars within x and y in terms of unicode values  
+ *  /x{5}/      matches exactly five times
+ *  /x{2,4}/    matches two to  four times
  * 
- *  /^/     start of input
- *  /$/     end of input
+ *  /(xyz)/     a group, allows operators like + and * to work on multiple elems
+ *  /x|y|z/     matches to x OR Y OR z
+ *  /[xyz]/     a set, matches anything inside once
+ *  /[^xyz]/    an inverse set, matches anything NOT inside
+ *  /{x}/       matches x amount of times
+ *  /{x,y}/     matches at least x and no more than y times (x <= _ <= y)
  *  
- *  /.../g  replaces all instances of matching expressions (g as in global)
- * 
- *  []      matches anything inside once
- *  {x}     matches x amount of times
- *  {x,y}   matches at least x and no more than y times (x <= _ <= y)
- *  x|y|z   matches to x OR Y OR z
- *  (xyz)   a group
+ *  /.../g  Global: replaces all instances of matching expressions
+ *  /.../i  Insensitive: the case of the pattern doesn't matter (a === A)
+ *  /.../u  Unicode: fixes problems with char sets that use multiple code units
+ *  /.../y  Sticky: will not search ahead when looking for a match
  */
 
 
