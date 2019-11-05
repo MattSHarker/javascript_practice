@@ -37,28 +37,31 @@ console.log(/[0-9]/.test("in this 1"));
 
 // LIST OF SPECIAL CHARACTERS AND SHORTCUTS
 
-/*  \d  any digit char
- *  \w  any alphanumeric char
- *  \s  and whiteshpace char
- *  \D  any NON-digit char
- *  \W  any NON-alphanumeric char
- *  \S  any NON-whitespace char
- *  \b  string boundry
+/*  /\d/    any digit char
+ *  /\w/    any alphanumeric char
+ *  /\s/    and whiteshpace char
+ *  /\D/    any NON-digit char
+ *  /\W/    any NON-alphanumeric char
+ *  /\S/    any NON-whitespace char
+ *  /\b/    string boundry
  * 
  *  x-y     matches any chars within x and y in terms of unicode values  
  *  .       any character expect for newline
  *  ?       makes part of a pattern optional
- *  ^       inverses a set of chars (put in front of patter)
+ *  [^]     inverts a set of chars (put in front of pattern)
  *  +       matches the set multiple times (at least once)
  *  *       matches the set multiple times (can also match 0 times)
+ * 
+ *  /^/     start of input
+ *  /$/     end of input
  *  
  *  /.../g  replaces all instances of matching expressions (g as in global)
  * 
  *  []      matches anything inside once
  *  {x}     matches x amount of times
  *  {x,y}   matches at least x and no more than y times (x <= _ <= y)
- *  (x|y|z) matches to x OR Y OR z
- * 
+ *  x|y|z   matches to x OR Y OR z
+ *  (xyz)   a group
  */
 
 
