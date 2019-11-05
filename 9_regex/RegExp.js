@@ -12,7 +12,6 @@ console.log(text.replace(regexp, "_$1_"));
     // in the above code, g is for global and i is for case insensitive
 
 
-
 // EXPRESSIONS WITH SPECIAL CHARACTERS
 
 // if we use the above code with an edgy screen name like dea+hl[]rd, the result
