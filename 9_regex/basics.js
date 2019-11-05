@@ -52,9 +52,7 @@ console.log(/[0-9]/.test("in this 1"));
  *  /x?/        matches zero or one  times
  *  /^/         start of input
  *  /$/         end of input
- *  /x-y/       matches any chars within x and y in terms of unicode values  
- *  /x{5}/      matches exactly five times
- *  /x{2,4}/    matches two to  four times
+ *  /x-y/       matches any chars within x and y in terms of unicode values
  * 
  *  /(xyz)/     a group, allows operators like + and * to work on multiple elems
  *  /x|y|z/     matches to x OR Y OR z
