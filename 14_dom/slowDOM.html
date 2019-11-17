@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>&lt;title&gt; element</title>
+  </head>
+
+  <body>
+    <p><span id="one"></span></p>
+    <p><span id="two"></span></p>
+
+    <script>
+        function time(name, action)
+        {
+            let start = Date.now();
+            action();
+            console.log(name, "took", Date.now() - start, "ms");
+        }
+
+        // this is slow since it switches between reading to and writing to
+            // the DOM each iteration, over many iterations
+        time("naive", () => {
+            let target = document.getElementById("one");
+
+            // reads the DOM once each iteration
+            while (target.offsetWidth < 2000) {
+                // writes to the DOM once each iteration
+                target.appendChild(document.createTextNode("X"));
+            }
+            
+        });
+        // takes around 35 ms
+
+        time("clever", function() {
+            let target = document.getElementById("two");
+
+            // 5 x's correlates to the "/ 5" below, makes it more accurate
+            target.appendChild(document.createTextNode("XXXXX"));
+
+            // reads the DOM once
+            let total = Math.ceil(2000 / (target.offsetWidth / 5)); 
+
+            // writes to the DOM multiple times
+            target.firstChild.nodeValue = "X".repeat(total);    
+        });
+        // takes around 1 ms
+
+    </script>
+  </body>
+
+</html>
