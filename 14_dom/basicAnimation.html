@@ -1,0 +1,56 @@
+<!-- POSITION STYLE -->
+
+<!--
+the position style is set to "static" by default, meaning it does not move 
+setting it to "relative" allows to set its "top" and "left" properties can 
+    used to adjust its position relative to its original position 
+"absolute" removes the element from normal document flow, and may overlap 
+    with other elements 
+    its top and left are now absolute position, relative to the top left 
+        corner of the nearest element whose position isn't "static", or 
+        the top left corner of the document if no other elements exist
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>basic animation</title>
+  </head>
+
+  <body>
+    <p style="text-align: center">
+        <img src="img/cat.png" style="position: relative"> 
+    </p>
+        
+    <script>
+        let cat = document.querySelector("img");
+        cat.style.height = "300px";
+        cat.style.width  = "300px";
+
+        let angle = Math.PI / 2;
+        function animate(time, lastTime)
+        {
+            if (lastTime != null)
+                angle += (time - lastTime) * 0.002;
+    
+            cat.style.top  = (Math.sin(angle) * 200 + 200) + "px";
+            cat.style.left = (Math.cos(angle) * 300)       + "px";
+    
+            requestAnimationFrame(newTime => animate(newTime, time));
+        }
+    
+        requestAnimationFrame(animate);
+    </script>
+  </body>
+</html>
+
+<!--
+the above document uses requestAnimationFrame to update the position of the
+    image
+updating the DOM in a loop would make the page freeze, as browsers do not 
+    update while JS is actively running
+requestAnimationFrame updates the browser at around 60fps (while the window 
+    is active) 
+I hate this style of comments
+-->
