@@ -107,4 +107,3 @@ console.log(array.map(s => s.toUpperCase()));
 
 // this code produces this doc:
     // https://i.imgur.com/4KHjU4q.png
-    
