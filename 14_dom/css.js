@@ -46,3 +46,42 @@ p#main.a.b {
 // p > a {...} applies to all <a> tags that are direct children of <p> tags
 // p a {...} apllies to all <a> tags inside <p> tags, regardlesss if they are
     // direct or indirect children
+
+
+// QUERY SELECTORS
+
+// The selector syntax (as see above) is also useful for finding DOM elements
+// querySelectorAll() is defined on the document object and on element nodes
+    // tales a selector string and returns a NodeList of everything it matches
+
+<p>And if you go chasing
+    <span class="animal">rabbits</span></p>
+<p>And you know you're going to fall</p>
+<p>Tell 'em a <span class="character">hooka smoking</span>
+    <span class="animal">caterpillar</span></p>
+<p>Has given you the call</p>
+
+//<script>    // commented out for my IDE to color it's contents correctly
+    function count(selector) {
+        return document.querySelectorAll(selector).length;
+    }
+
+    console.log(count("p"));            // all <p> elements
+    // -> 4
+
+    console.log(count(".animal"));      // Class: animal
+    // -> 2
+
+    console.log(count("p .animal"));    // Animal inside of <p>
+    // -> 2
+
+    console.log(count("p > .animal"));  // Direct child of <p>
+    // -> 1
+//</script>
+
+// the object returned by querySelectorAll is not live, and will not change
+    // as the document is changed
+// it is also not a real array, so Array.from is needed to treat it as one
+
+// querySelector() is useful for getting a single specific element
+    // it returns the first matching element found, or null if none match 
