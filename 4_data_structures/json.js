@@ -14,5 +14,5 @@
 let string = JSON.stringify({squirrel: false, events: ["work"]});
     // string === {"squirrel":false,"events":["work"]}
 
-let data = JSON.parse(String).events;
+let data = JSON.parse(string).events;
     // data === ["work"]
