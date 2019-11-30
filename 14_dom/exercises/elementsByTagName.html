@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Elements by Tag Name</title>
+  </head>
+
+  <body>
+    <!-- The elements to traverse over -->
+    <h1>Heading with a <span>span</span> element.</h1>
+    <p>A paragraph with <span>one</span>, <span>two</span>
+      spans.</p>
+    
+    <script>
+      function byTagName(node, tagName) {
+        // an array to hold all of the matching tags
+        let matchingTags = [];
+
+        // convert tagName to upper case
+        tagName = tagName.toUpperCase();
+
+        // a function to recursively traverse through the DOM
+        function traverse(node)
+        {
+          // for every child in the current node
+          for (let i = 0; i < node.childNodes.length; i++)
+          {
+            // grab one of the nodes
+            let child = node.childNodes[i];
+
+            // check if the child is an element node (e.g. <p> or <div> and not Text)
+            if (child.nodeType === document.ELEMENT_NODE)
+            {
+              // if the node is of the type we are looking for...
+              if (child.nodeName == tagName)
+              {
+                // add it to the array
+                matchingTags.push(child);
+              } 
+
+              // explore this node's children
+              traverse(child);
+            }
+          }
+        }
+
+        // traverse the document
+        traverse(node);
+
+        // return the array of found tags
+        return matchingTags;
+      }
+
+      // test the function
+      console.log(byTagName(document.body, "h1").length);
+      // → 1
+
+      console.log(byTagName(document.body, "span").length);
+      // → 3
+
+      let para = document.querySelector("p");
+
+      console.log(byTagName(para, "span").length);
+      // → 2
+    </script>
+  </body>
+</html>

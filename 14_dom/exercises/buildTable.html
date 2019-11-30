@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Build a Table</title>
+    </head>
+
+    <body>
+        <h1>Mountains</h1>
+
+        <div id="mountains"></div>
+
+        <script>
+            const MOUNTAINS = [
+                {name: "Kilimanjaro", height: 5895, place: "Tanzania"},
+                {name: "Everest", height: 8848, place: "Nepal"},
+                {name: "Mount Fuji", height: 3776, place: "Japan"},
+                {name: "Vaalserberg", height: 323, place: "Netherlands"},
+                {name: "Denali", height: 6168, place: "United States"},
+                {name: "Popocatepetl", height: 5465, place: "Mexico"},
+                {name: "Mont Blanc", height: 4808, place: "Italy/France"}
+            ];
+
+            // Your code here
+            function buildTable(data)
+            {
+                // create the table
+                let table = document.createElement("table");
+
+                // create the fields for the table
+                let fields= Object.keys(data[0]);
+
+                // create an object to hold the header row
+                let headRow = document.createElement("tr");
+
+                // for each item in the fields object...
+                fields.forEach(function(field)
+                {
+                    // create a header cell
+                    let headCell = document.createElement("th");
+
+                    // addend a text node with the field name to the cell
+                    headCell.appendChild(document.createTextNode(field));
+
+                    // append the header cell to the header row
+                    headRow.appendChild(headCell);
+                });
+
+                // append the header row to the table
+                table.appendChild(headRow);
+
+                // create  the other rows
+                data.forEach(function(object)
+                {
+                    // create an object to hold the new row
+                    let row = document.createElement("tr");
+
+                    // for each column in the row...
+                    fields.forEach(function(field)
+                    {
+                        // create a cell to hold the info
+                        let cell = document.createElement("td");
+
+                        // add the information to the cell
+                        cell.appendChild(document.createTextNode(object[field]));
+
+                        // if the cell is a number, allign the text to the right
+                        if (typeof object[field] === "number")
+                            cell.style.textAlign = "right";
+                        
+                        // append the cell to the row
+                        row.appendChild(cell);
+                    });
+
+                    // after the row is done, append it to the table$
+                    table.appendChild(row);
+                });
+
+                // return the completed table
+                return table;
+            }
+
+            // find the first child of the class "mountains" and create a table
+                // from its information
+            document.querySelector("#mountains").appendChild(buildTable(MOUNTAINS));
+        </script>
+    </body>
+</html>
+
+<!-- I was unable to personally figure this one out in a clean
+     method, so I instead took the provided answer and commented
+     what is happening step by step to help myself understand the
+     thought process -->
