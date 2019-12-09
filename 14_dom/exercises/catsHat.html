@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>The Cat's Hat</title>
+    </head>
+
+    <body>
+        <style>body { min-height: 200px }</style>
+        <img src="../img/cat.png" id="cat" style="position: relative">  <!-- changed these to relative -->
+        <img src="../img/hat.png" id="hat" style="position: relative">
+        
+        <script>
+            let cat = document.querySelector("#cat");
+            cat.style.height = "150px"; // these are mine to make the cat a reasonable size
+            cat.style.width  = "150px";
+
+            let hat = document.querySelector("#hat");
+          
+            let angle = 0;
+            let lastTime = null;
+
+            function animate(time){
+                if (lastTime != null) angle += (time - lastTime) * 0.001;
+                lastTime = time;
+                cat.style.top  = (Math.sin(angle) * 200 + 200) + "px";  // also modified to fit the window better
+                cat.style.left = (Math.cos(angle) * 300 + 500) + "px";
+            
+                // Your extensions here.
+                hat.style.top  = (Math.sin(angle + Math.PI) * 200 + 200) + "px";
+                hat.style.left = (Math.cos(angle + Math.PI) * 300 + 500) + "px";
+
+                requestAnimationFrame(animate);
+            }
+
+            requestAnimationFrame(animate);
+        </script>
+    </body>
+</html>
