@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Timers</title>
+    </head>
+
+    <body>
+        <script>
+            // Cancelling a timer
+            let bombTimer = setTimeout(() => {
+                console.log("BOOM!");
+            }, 500);    // milliseconds (.5 seconds)
+
+            if (Math.random() < 0.5) {
+                console.log("Defused");
+                clearTimeout(bombTimer);
+            }
+
+            // setting interval lengths and canceling intervals 
+            let ticks = 0;
+            let clock = setInterval(() => {
+                console.log("tick", ticks++);
+                if (ticks == 10) {
+                    clearInterval(clock);
+                    console.log("stop.");
+                }
+            }, 200);
+        </script>
+    </body>
+</html>

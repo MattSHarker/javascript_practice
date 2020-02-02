@@ -1,0 +1,41 @@
+<!-- This program displays a progress bar that fills as the page is scrolled down -->
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Scroll Events</title>
+
+        <style>
+            /* The position: fixed acts like absolute, but prevents the element
+               from scrolling along with the page */
+            #progress {
+                border-bottom: 4px solid blue;
+                width: 0;
+                position: fixed;
+                top: 0;
+                left: 0;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="progress"></div>
+
+        <script>
+            // create some content
+            document.body.appendChild(document.createTextNode(
+                "The quick brown fox jumped over the lazy dogs. ".repeat(1000)));
+
+            let bar = document.querySelector("#progress");
+
+            // for scrolling, the event handler happens AFTER the scrolling takes place
+            // preventDefault would not prevent the scrolling from happening
+            window.addEventListener("scroll", () => {
+                let max = document.body.scrollHeight - innerHeight;
+                bar.style.width = `${(pageYOffset / max) * 100}%`;
+            });
+        </script>
+    </body>
+</html>

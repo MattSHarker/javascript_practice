@@ -1,0 +1,73 @@
+<!-- 
+    Handlers registered on nodes with children will also
+        receive events that happened on the children
+    If both the parent and the child have a handler, the
+        more specific button goes first
+    Events are said to propagate OUTWARDS, starting from
+        the original node, to its parents, to the root of
+        the document
+
+    At any point, an event handler can call stopPropagation,
+        which prevents higher nodes from receiving the event 
+
+    It is possible to use the "target" property to add handlers
+        to multiple nodes at the same time
+-->
+
+<!-- Part 1
+    This program registers a "mousedown" handler on both the
+        paragraph and the button
+    The button has a call to stopPropagation on right clicks,
+        preventing the paragraph's event from running when
+        the right mouse button is pressed
+
+    Since two documents are being combined into one, the button
+        will also register an event that gets attached in part 2
+ -->
+
+<!-- Part 2
+    This document adds a handler to multiple buttons at the same time
+ -->
+ 
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Propagation</title>
+    </head>
+
+    <body>
+        <!-- Part 1 -->
+        <p>A paragraph with a <button>button</button>.</p>
+        
+        <!-- Part 2 -->
+        <button>A</button>
+        <button>B</button>
+        <button>C</button>
+
+        <script>
+            // Part 1
+            let para   = document.querySelector("p");
+            let button = document.querySelector("button");
+
+            // add a handler to the paragraph
+            para.addEventListener("mousedown", () => {
+                console.log("Paragraph handler");
+            });
+
+            // add a handler to the button
+            button.addEventListener("mousedown", event => {
+                console.log("Button handler");
+                // on right clicks, stop propagation
+                if (event.button === 2) event.stopPropagation();
+            });
+
+            // Part 2
+            document.body.addEventListener("click", event => {
+                if (event.target.nodeName === "BUTTON") {
+                    console.log("Clicked", event.target.textContext);
+                }
+            });
+        </script>
+    </body>
+</html>

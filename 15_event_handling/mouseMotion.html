@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Mouse Motion</title>
+    </head>
+
+    <body>
+        <p>Drag the bar to change its width:</p>
+        <div style="background: orange; width: 60px; height: 20px">
+        </div>
+
+        <script>
+            let lastX;  // Tracks the last observed mouse X position
+            let bar = document.querySelector("div");
+
+            // have the bar handle listen for mouseclicks
+            bar.addEventListener("mousedown", event => {
+                // if the left mouse button is clicked
+                if (event.button === 0) // NOTE this is "button" (singular)
+                {
+                    // set lastX to the x value of the click's position
+                    lastX = event.clientX;  
+
+                    // add a handler that executes moved() when triggered
+                    window.addEventListener("mousemove", moved);
+
+                    // prevents default action (selection)
+                    event.preventDefault(); 
+                }
+            });
+
+            // changes the size of the bar
+            function moved(event)
+            {   
+                // if no buttons are being pressed (left mouse button has been released)
+                if (event.buttons === 0) // NOTE this is "buttons" (plural)
+                {
+                    // remove the event listener, preventing the bar from being adjustable
+                    window.removeEventListener("mousemove", moved);
+                }
+
+                else
+                {
+                    // calculate the change in distance
+                    let dist = event.clientX - lastX;
+
+                    // calculate the new width, which must be at least 10px wide
+                    let newWidth = Math.max(10, bar.offsetWidth + dist);
+
+                    // set the bar to the new width
+                    bar.style.width = newWidth + "px";
+
+                    // set the position of lastX
+                    lastX = event.clientX;
+                }
+            }
+        </script>
+    </body>
+</html>

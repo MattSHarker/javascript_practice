@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Debouncing</title>
+    </head>
+
+    <body>
+        <!-- React whenever the user types, but only after the typing has
+             stopped for 0.5 seconds -->
+        <textarea>Type something here...</textarea>
+        <script>
+            let textarea = document.querySelector("textarea");
+            let timeout;
+            textarea.addEventListener("input", () => {
+                clearTimeout(timeout);
+                timeout = setTimeout(() => console.log("Types!"), 500);
+            });
+        </script>
+    </body>
+</html>

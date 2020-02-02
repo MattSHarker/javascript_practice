@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Events and Event Loops</title>
+    </head>
+
+    <body>
+        <!-- Events can only be processed nothing else is running -->
+        <!-- Interactions with the page will be delayed until there's 
+             time to process it -->
+        <!-- Scheduling too much work will make the page slow to use -->
+
+        <!-- Web workers (or workers) are processes that run alongside the
+             main script on its own time -->
+        <script>
+            let squareWorker = new Worker("squareWorker.js");
+            squareWorker.addEventListener("message", event => {
+                console.log("The worker responded:", event.data);
+            });
+
+            squareWorker.postMessage(10);
+            squareWorker.postMessage(24);
+        </script>
+    </body>
+</html>
+
+<!-- REFER TO THE ONLINE EXAMPLE FOR A WORKING VERSION 
+     https://eloquentjavascript.net/15_event.html -->
+<!-- WORKS ARE KIND OF BROKEN IN CHROME -->

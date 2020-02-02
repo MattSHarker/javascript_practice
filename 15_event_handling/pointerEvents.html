@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Pointer Events</title>
+
+        <!-- <style> can go in either the head or body -->
+        <!-- putting it in the head makes for cleaner organization -->
+        <style>
+            body {
+                height: 200px;
+                background: beige;
+            }
+            .dot {
+                height: 8px; width: 8px;
+                border-radius: 4px; /* for round corners */
+                background: blue;
+                position: absolute;
+            }
+        </style>
+    </head>
+
+    <body>
+        <script>
+            window.addEventListener("click", event => {
+                let dot = document.createElement("div");
+
+                dot.className = "dot";
+                dot.style.left = (event.pageX - 4) + "px";
+                dot.style.top  = (event.pageY - 4) + "px";
+                
+                document.body.appendChild(dot);
+
+                console.log("Click");
+            });
+        </script>
+    </body>
+</html>

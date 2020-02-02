@@ -1,0 +1,36 @@
+<!-- 
+    Some events have default actions associated with them
+        Clicking a link takes you to the specified webpage
+        right-clicking opens a context menu
+    
+    For most events, the JS handler occurs BEFORE the default
+        behavior happens
+    
+    .preventDefault can be used to prevent a default action from
+        running
+ -->
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Default Actions</title>
+    </head>
+
+    <body>
+        <a href="https://developer.mozilla.org/">MDN</a>
+
+        <script>
+            let link = document.querySelector("a");
+            link.addEventListener("click", event => {
+                console.log("Nope");
+                event.preventDefault();
+            });
+
+        </script>
+    </body>
+</html>

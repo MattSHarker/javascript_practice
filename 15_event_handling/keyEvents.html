@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Key Events</title>
+    </head>
+
+    <body>
+        <p>This page turns violet when you hold down the v key.</p>
+        <p>This page turns blue   when you hold down the b key.</p>
+        <p>This page turns brown  when you hold down the shift-b keys.</p>
+        <p>This page turns yellow when you hold down the ctrl and space keys.</p>
+
+        
+        <script>
+            // keydown not only fires when the key is pressed, but when
+                // the key is held down as well
+            window.addEventListener("keydown", event => {
+                if (event.key === "v")
+                    document.body.style.background = "violet";});
+            window.addEventListener("keyup", event => {
+                if (event.key === "v")  
+                document.body.style.background = "";});
+
+            // b and B are different keys
+            window.addEventListener("keydown", event => {
+                if (event.key === "b")
+                    document.body.style.background = "blue";});
+            window.addEventListener("keyup", event => {
+                if (event.key === "b")
+                    document.body.style.background = "";});
+
+            window.addEventListener("keydown", event => {
+                if (event.key === "B")
+                    document.body.style.background = "brown";});
+            window.addEventListener("keyup", event => {
+                if (event.key === "B")
+                    document.body.style.background = "";});
+
+            // for modifiers like ctrl or alt, the modifier and the other key must
+                // be seperately specified
+            // space is written as " "
+            window.addEventListener("keydown", event => {
+                if (event.key === " " && event.ctrlKey)
+                    document.body.style.background = "brown";});
+            window.addEventListener("keyup", event => {
+                if (event.key === " " && event.ctrlKey)
+                    document.body.style.background = "";});
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Balloon</title>
+    </head>
+
+    <body>
+        <!-- 🎈 💥 -->
+        <p>🎈</p>
+
+        <script>
+            // grab the balloon emoji
+            let balloon = document.querySelector("p");
+
+            // create a variable to store the balloon's size
+            let size;
+            function setSize(newSize) {
+                size = newSize;
+                balloon.style.fontSize = size + "px";
+            }
+            
+            // set the size to a default value
+            setSize(20);
+
+            // create a function to change the balloon's size base on
+                // the user's key presses
+            function changeBalloon(event) {
+                if (event.key === "ArrowUp") {
+                    if (size > 70) {
+                        balloon.textContent = "💥";
+                        document.body.removeEventListener("keydown", changeBalloon)
+                    } else {
+                        setSize(size * 1.1);
+                        event.preventDefault(); // to prevent the page from scrolling
+                    }
+                } else if (event.key === "ArrowDown") {
+                    setSize(size * 0.9);
+                    event.preventDefault();
+                }
+            }
+
+            // have the document listen for "keydown" events
+            document.body.addEventListener("keydown", changeBalloon);
+        </script>
+    </body>
+</html>
